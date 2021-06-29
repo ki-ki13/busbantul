@@ -79,7 +79,7 @@
 		var layer = {
 			name: data.jalur,
 			icon: iconByName(data.warna),
-			layer: new L.GeoJSON.AJAX([data.linkgeojson.replace("dl=0","raw=1")], {
+			layer: new L.GeoJSON.AJAX([data.linkgeojson.replace("www.dropbox.com","dl.dropboxusercontent.com").replace("?dl=0","")], {
 				onEachFeature: popUp,
 				style: function(feature) {
 					// console.log(feature);
