@@ -1,0 +1,124 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #DDDDDD;
+	overflow-x: hidden;
+}
+
+.navigasi {
+	display: flex;
+}
+
+.navigasi li {
+	list-style: none;
+	/* display: inline-block; */
+	flex: 1;
+	text-align: center;
+}
+
+.navigasi li a {
+	padding-bottom: 10px;
+	color: #4C4C4C;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.navigasi li a:hover {
+	color: #002992;
+	font-weight: bold;
+}
+
+.navigasi li .active {
+	color: #002992;
+	font-weight: bold;
+	border-bottom: 5px solid #002992;
+	width: 80%;
+	transition: 0.5s ease;
+}
+
+.rute p {
+	font-weight: 600;
+	color: #4C4C4C;
+	margin: 5%;
+	font-size: 18px;
+}
+
+.pilihan-rute .jalur {
+	cursor: pointer;
+	list-style: none;
+	border-bottom: 0.15px solid #002992;
+}
+
+.pilihan-rute .jalur i {
+	color: #002992;
+	font-size: 22px;
+	padding: 10px;
+	margin: 2.5% 0 2.5% 5%;
+}
+
+.box {
+	width: 100%;
+	background: linear-gradient(90deg, rgba(0, 41, 146, 1) 0%, rgba(110, 86, 255, 1) 100%);
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.box li {
+	padding: 2% 0 0 10%;
+	color: white;
+}
+
+.box li:nth-child(1) {
+	padding-top: 5%;
+}
+
+.box .akhir {
+	padding-bottom: 5%;
+}
+
+.bulet {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: white;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.arah .form-arah .input-group .bulet {
+	width: 12px;
+	height: 12px;
+	margin-right: 15px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.line {
+	height: 30px;
+	width: 2.5px;
+	margin-top: 10px;
+	margin-left: 5px;
+	background-color: white;
+}
+
+.akhir-jalur {
+	height: 20vh;
+	width: 100%;
+	background-color: #F0EFF8;
+}
+
+main .map {
+	z-index: -1;
+	flex: 2;
+	background-color: #DDDDDD;
+}
+
+.container-footer {
+	color: white;
+	text-align: center;
+	padding: 2% 0;
+	width: 100%;
+	background: linear-gradient(90deg, rgba(0, 41, 146, 1) 0%, rgba(110, 86, 255, 1) 100%);
+}
