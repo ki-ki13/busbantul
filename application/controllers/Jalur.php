@@ -96,6 +96,8 @@ class Jalur extends CI_Controller
                 //     redirect('jalur');
                 //     exit();
                 // }
+                $link= getLink("/Apps/Busbantul/". $data['geojson']);
+                $data['linkgeojson'] = $link['url'];
             }
             if ($_FILES['marker']['name'] != '') {
 
@@ -136,11 +138,13 @@ class Jalur extends CI_Controller
                 //     // die();
                 //     redirect('jalur');
                 //     exit();
+                $link2= getLink("/Apps/Busbantul/". $data['marker']);
+                $data['linkmarker'] = $link2['url'];
             }
-            $link= getLink("/Apps/Busbantul/". $data['geojson']);
-            $link2= getLink("/Apps/Busbantul/". $data['marker']);
-            $data['linkgeojson'] = $link['url'];
-            $data['linkmarker'] = $link2['url'];
+           
+            
+            
+            
             if ($_POST['parameter'] == "tambah") {
                 $this->model->insert($data);
             } else {
