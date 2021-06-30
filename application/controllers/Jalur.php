@@ -154,7 +154,7 @@ class Jalur extends CI_Controller
     public function linkGeojson($id=''){
         $this->db->where('id_jalur', $id);
         $datum = $this->model->get_jalur()->row();
-        echo "<a href='$datum->link'>Link geojson, download it anyway</a>";
+        echo "<a href='$datum->linkgeojson'>Link geojson, download it anyway</a>";
     }
     // public function linkMarker($id=''){
     //     $datum = $this->model->get_jalur();
