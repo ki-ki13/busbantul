@@ -59,7 +59,7 @@ function getLink($path=''){
     ob_start();
     $data = $response->getDecodedBody();
     $ket = "if u want to get the geojson file, search for the 'url' in json properties, 
-    if there's an error due to u clicked twice on this link and the shared link has been created bitch";
+    if there's an error due to u clicked twice on this link than the shared link has been created bitch";
     //$data = json_decode($data);
     return $data;
  }

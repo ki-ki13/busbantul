@@ -46,13 +46,13 @@ if ($parameter == 'ubah' && $id != '') {
                         <?= input_color('warna', $warna) ?>
 
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Marker</label>
-                        <?= input_file('marker', $marker) ?>
-                        <?php if ($parameter == 'ubah') : ?>
+                        <-?= input_file('marker', $marker) ?>
+                        <-?php if ($parameter == 'ubah') : ?>
                             <small class="text-success">Biarkan kosong jika tidak ingin diubah</small>
-                        <?php endif ?>
-                    </div>
+                        <-?php endif ?>
+                    </div> -->
                     <div class="form-group">
                         <button type="submit" name="simpan" value="true" class="btn btn-info"><i class="fa fa-save"></i> Simpan</button>
                         <a href="<?= site_url($url) ?>" class="btn btn-danger"><i class="fa fa-reply"></i> Kembali</a>

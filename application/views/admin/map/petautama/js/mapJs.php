@@ -54,20 +54,23 @@
 	function iconByImage(image) {
 		return '<img src="' + image + '" style="width:16px">';
 	}
-
-	function featureToMarker(feature, latlng) {
-		return L.marker(latlng, {
-			icon: L.divIcon({
-				className: 'marker-' + feature.properties.amenity,
-				html: iconByName(feature.properties.amenity),
-				iconUrl: '../images/markers/' + feature.properties.amenity + '.png',
-				iconSize: [25, 41],
-				iconAnchor: [12, 41],
-				popupAnchor: [1, -34],
-				shadowSize: [41, 41]
-			})
-		});
+	function iconMarker(name) {
+		return '<i class="fa fa-map-marker-alt" style="color:' + name + '"></i>';
 	}
+
+	// function featureToMarker(feature, latlng) {
+	// 	return L.marker(latlng, {
+	// 		icon: L.divIcon({
+	// 			className: 'marker-' + feature.properties.amenity,
+	// 			html: '<i class="fa fa-map-marker-alt" style="color:' + feature + ';border-radius:50%"></i>',
+	// 			//iconUrl: '../images/markers/' + feature.properties.amenity + '.png',
+	// 			iconSize: [25, 41],
+	// 			iconAnchor: [12, 41],
+	// 			popupAnchor: [1, -34],
+	// 			shadowSize: [41, 41]
+	// 		})
+	// 	});
+	//}
 
 	var baseLayers = [{
 		name: "StreetMap",
@@ -81,18 +84,19 @@
 			icon: iconByName(data.warna),
 			layer: new L.GeoJSON.AJAX([data.linkgeojson.replace("www.dropbox.com","dl.dropboxusercontent.com").replace("?dl=0","")], {
 				onEachFeature: popUp,
-				style: function(feature) {
-					// console.log(feature);
-					var KODE = feature.properties.KODE;
-					return {
-						"color": getColorJalur(KODE),
-						"weight": 3,
-						"opacity": 1
-					}
+				style:{
+				"color": data.warna, 
+				"weight": 3,
+				"opacity": 1}
+				// function(feature) {
+				// 	// console.log(feature);
+				// 	//var KODE = feature.properties.KODE;
+				// 	return 
+				// 		"weight": 3,
+				// 		"opacity": 1
+					
 
-				},
-
-			}).addTo(map) 
+				}).addTo(map) 
 		}
 		layersJalur.push(layer);
 	}
@@ -100,16 +104,22 @@
 	//kategoritikor
 	for (i = 0; i < datakategoritikor.length; i++) {
 		var data = datakategoritikor[i];
+		var warnaMarker = data.warna;
+		const markermap ={
+
+		}
 		var layer = {
 			name: (data.jalur),
-			icon: iconByImage(data.marker),
-			layer: new L.GeoJSON.AJAX(["<?= site_url('api/data/tikor/point') ?>/" + data.id_jalur], {
+			icon: iconMarker(data.warna),
+			layer: new L.GeoJSON.AJAX(["<?= site_url('admin/api/data/tikor/point') ?>/" + data.id_jalur], {
 
 				pointToLayer: function(feature, latlng) {
 					// console.log(feature)
 					return L.marker(latlng, {
-						icon: new L.icon({
-							iconUrl: feature.properties.marker,
+						icon: L.divIcon({
+							className : 'yoyo',
+							html :'<i class="fa fa-map-marker-alt" style="color: '+ feature.properties.warna + '; background-color: none"></i>',
+							//iconUrl: iconMarker(feature.properties.warna),
 							iconSize: [15, 20]
 						})
 					});
@@ -135,7 +145,8 @@
 	}];
 
 	var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {
-		collapsibleGroups: true
+		collapsibleGroups: true,
+		collapsed : true
 	});
 
 	map.addControl(panelLayers);

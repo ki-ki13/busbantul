@@ -38,7 +38,8 @@ class Api extends CI_Controller
                 $data = null;
                 $data['id_jalur'] = $row->id_jalur;
                 $data['jalur'] = $row->jalur;
-                $data['marker'] = ($row->marker == '') ? ('assets/icons/marker.png') : (str_replace("dl=0","raw=1",$row->linkmarker));
+                $data['warna'] = $row->warna;
+                //$data['marker'] = ($row->marker == '') ? ('assets/icons/marker.png') : (str_replace("dl=0","raw=1",$row->linkmarker));
                 $response[] = $data;
             }
             echo "var datakategoritikor=" . json_encode($response, JSON_PRETTY_PRINT);
@@ -72,8 +73,9 @@ class Api extends CI_Controller
                     $data['properties'] = [
                         "jalur" => $row->jalur,
                         "stop" => $row->stop,
+                        "warna" => $row->warna,
                         // "tanggal" => $row->tanggal,
-                        "marker" => ($row->marker == '') ? ('assets/icons/marker.png') : (str_replace("dl=0","raw=1",$row->linkmarker)),
+                        //"marker" => ($row->marker == '') ? ('assets/icons/marker.png') : (str_replace("dl=0","raw=1",$row->linkmarker)),
                         "popUp" => "Jalur : " . $row->jalur . "<br>Pemberhentian : " . $row->stop
                     ];
                     $data['geometry'] = [

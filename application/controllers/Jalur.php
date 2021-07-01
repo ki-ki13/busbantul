@@ -75,10 +75,11 @@ class Jalur extends CI_Controller
                     // File Uploaded
                     echo $uploadedFile->getPathDisplay();
                 } catch (DropboxClientException $e) {
-                    $e->getMessage();
+                    //$e->getMessage;
+                    $error = "Masukkan file dengan nama yang berbeda dari sebelumnya";
                     $info = '<div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Error!</h4> ' . $e . ' </div>';
+                    <h4><i class="icon fa fa-ban"></i> Error!</h4> ' . $error . ' </div>';
                     $this->session->set_flashdata('info', $info);
                     redirect('jalur');
                     exit();
@@ -99,48 +100,48 @@ class Jalur extends CI_Controller
                 $link= getLink("/Apps/Busbantul/". $data['geojson']);
                 $data['linkgeojson'] = $link['url'];
             }
-            if ($_FILES['marker']['name'] != '') {
+            // if ($_FILES['marker']['name'] != '') {
 
-                $file2 = $_FILES['marker'];
+            //     $file2 = $_FILES['marker'];
 
-                // File Path
-                $fileName2 = $file2['name'];
-                $filePath2 = $file2['tmp_name'];
+            //     // File Path
+            //     $fileName2 = $file2['name'];
+            //     $filePath2 = $file2['tmp_name'];
 
-                try {
-                    // Create Dropbox File from Path
-                    $dropboxFile2 = new DropboxFile($filePath2);
+            //     try {
+            //         // Create Dropbox File from Path
+            //         $dropboxFile2 = new DropboxFile($filePath2);
 
-                    // Upload the file to Dropbox
-                    $uploadedFile2 = $dropbox->upload($dropboxFile2, "/Apps/Busbantul/" . $fileName2, ['autorename' => false]);
+            //         // Upload the file to Dropbox
+            //         $uploadedFile2 = $dropbox->upload($dropboxFile2, "/Apps/Busbantul/" . $fileName2, ['autorename' => false]);
 
-                    // File Uploaded
-                    $data['marker'] = $fileName2;
-                    echo $uploadedFile2->getPathDisplay();
-                } catch (DropboxClientException $e) {
-                    $e->getMessage();
-                    $info = '<div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Error!</h4> ' . $e . ' </div>';
-                    $this->session->set_flashdata('info', $info);
-                    redirect('jalur');
-                    exit();
-                }
-                // $upload = upload('marker', 'marker', 'image');
-                // if ($upload['info'] == true) {
-                //     $data['marker'] = $upload['upload_data']['file_name'];
-                // } elseif ($upload['info'] == false) {
-                //     $info = '<div class="alert alert-danger alert-dismissible">
-                //     	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                //     	<h4><i class="icon fa fa-ban"></i> Error!</h4> ' . $upload['message'] . ' </div>';
-                // s    $this->session->set_flashdata('info', $info);
-                //     // var_dump($upload);
-                //     // die();
-                //     redirect('jalur');
-                //     exit();
-                $link2= getLink("/Apps/Busbantul/". $data['marker']);
-                $data['linkmarker'] = $link2['url'];
-            }
+            //         // File Uploaded
+            //         $data['marker'] = $fileName2;
+            //         echo $uploadedFile2->getPathDisplay();
+            //     } catch (DropboxClientException $e) {
+            //         $e->getMessage();
+            //         $info = '<div class="alert alert-danger alert-dismissible">
+            //         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            //         <h4><i class="icon fa fa-ban"></i> Error!</h4> ' . $e . ' </div>';
+            //         $this->session->set_flashdata('info', $info);
+            //         redirect('jalur');
+            //         exit();
+            //     }
+            //     // $upload = upload('marker', 'marker', 'image');
+            //     // if ($upload['info'] == true) {
+            //     //     $data['marker'] = $upload['upload_data']['file_name'];
+            //     // } elseif ($upload['info'] == false) {
+            //     //     $info = '<div class="alert alert-danger alert-dismissible">
+            //     //     	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            //     //     	<h4><i class="icon fa fa-ban"></i> Error!</h4> ' . $upload['message'] . ' </div>';
+            //     //     $this->session->set_flashdata('info', $info);
+            //     //     // var_dump($upload);
+            //     //     // die();
+            //     //     redirect('jalur');
+            //     //     exit();
+            //     $link2= getLink("/Apps/Busbantul/". $data['marker']);
+            //     $data['linkmarker'] = $link2['url'];
+            // }
            
             
             
