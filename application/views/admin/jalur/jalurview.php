@@ -37,7 +37,8 @@
                             <td class="text-left"><?= $jalur->jalur; ?></td>
                             <td style="background:<?= $jalur->warna; ?> ;"></td>
                             <td><a href="<?= site_url($url .'/linkGeojson/'. $jalur->id_jalur)?>" target="_BLANK"><?= $jalur->geojson ?></a></td>
-                            <td class="text-center"><?= ($jalur->marker == '' ? '-' : '<img src="' . (str_replace("dl=0","raw=1", $jalur->linkmarker)) . '" width="40px">') ?></td>
+                            <!-- <td class="text-center"><-?= ($jalur->marker == '' ? '-' : '<img src="' . (str_replace("dl=0","raw=1", $jalur->linkmarker)) . '" width="40px">') ?></td> -->
+                            <td class="text-center"><i class="fa fa-map-marker-alt" style="color:<?= $jalur->warna?>; font-size:30px;"></i></td>
                             <td>
                                 <a href="<?= site_url($url . '/form/ubah/' . $jalur->id_jalur) ?>" class="btn btn-info"><i class="fa fa-edit"></i></a>
 
