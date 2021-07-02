@@ -55,17 +55,17 @@ class Stop extends CI_Controller
 		}
 		redirect('stop');
 	}
-	public function hapus($id = '')
-	{
-		// hapus file di dalam folder
-		$this->db->where('id_stop', $id);
-		$get = $this->model->get()->row();
-		$marker = $get->marker;
-		unlink('assets/unggah/marker/' . $marker);
-		// end hapus file di dalam folder
-		$this->model->delete(["id_stop" => $id]);
-		redirect('stop');
-	}
+	// public function hapus($id = '')
+	// {
+	// 	// hapus file di dalam folder
+	// 	$this->db->where('id_stop', $id);
+	// 	$get = $this->model->get()->row();
+	// 	$marker = $get->marker;
+	// 	unlink('assets/unggah/marker/' . $marker);
+	// 	// end hapus file di dalam folder
+	// 	$this->model->delete(["id_stop" => $id]);
+	// 	redirect('stop');
+	// }
 
 	public function datatable()
 	{
@@ -110,7 +110,8 @@ class Stop extends CI_Controller
 			$r[] = $row->stop;
 			$r[] = $row->latitude;
 			$r[] = $row->longitude;
-			$r[] = $row->marker == '' ? '-' : '<img src="' . ('assets/unggah/marker/' . $row->marker) . '" width="40px">';
+			$r[] = '<i class="fa fa-map-marker-alt" style="color : ' . $row->warna . '; font-size: 30px "></i>';
+			//$r[] = $row->marker == '' ? '-' : '<img src="' . ('assets/unggah/marker/' . $row->marker) . '" width="40px">';
 			$r[] = '<a href="' . site_url($url . '/form/ubah/' . $row->id_stop) . '" class="btn btn-info"><i class="fa fa-edit"></i></a>;
 								<a href="' . site_url($url . '/hapus/' . $row->id_stop) . '" class="btn btn-danger" onclick="return confirm(\'Hapus data?\')"><i class="fa fa-trash"></i></a>';
 			$output['aaData'][] = $r;
@@ -118,7 +119,7 @@ class Stop extends CI_Controller
 		echo json_encode($output, JSON_PRETTY_PRINT);
 	}
 
-	/** 					<tbody>
+	/* 					<tbody>
 					<?php
 					$no = 1;
 					foreach ($datastop->result() as $row) {
