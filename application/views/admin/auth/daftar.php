@@ -53,12 +53,12 @@
                                         <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Repeat Password">
                                     </div>
                                 </div>
-                                <!-- <div class="form-group pl-3">
+                                <div class="form-group pl-3">
                                     <label>Level</label>
                                     <br>
                                     <input type="radio" value="admin" id="level" name="level" checked required> admin
-                                    <input class="ml-3" type="radio" value="user" id="level" name="level" required> user
-                                </div> -->
+                                    <!--input class="ml-3" type="radio" value="user" id="level" name="level" required> user-->
+                                </div> 
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </button>
