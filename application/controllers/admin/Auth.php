@@ -87,7 +87,7 @@ class Auth extends CI_Controller
             $data = [
                 'nm_admin' => $this->input->post('nm_admin'),
                 'level' => $this->input->post('level'),
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 
             ];
             $this->db->insert('adminname', $data);
