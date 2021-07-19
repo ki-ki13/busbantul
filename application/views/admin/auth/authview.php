@@ -49,7 +49,7 @@
                                             <input type="text" class="form-control form-control-user bg-light rounded-pill" name="nm_admin" placeholder="Username" required="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user bg-light rounded-pill" name="kt_sandi" placeholder="Password" required="" />
+                                            <input type="password" class="form-control form-control-user bg-light rounded-pill" name="password" placeholder="Password" required="" />
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary btn-block rounded-pill">
