@@ -59,7 +59,7 @@
                                         <hr>
                                        <div class="text-center">
                                             <a href="<?= site_url('admin/auth/pendaftaran'); ?>">Daftar</a>
-                                            <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                            <!-- <a class="small" href="forgot-password.html">Forgot Password?</a> -->
                                         </div> 
                                     </form>
                                 </div>
