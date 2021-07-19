@@ -42,8 +42,6 @@ class Auth extends CI_Controller
 		                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 		                <h4><i class="icon fa fa-ban"></i> Error!</h4> Nama admin atau Kata Sandi Salah
 		              </div>');
-                    var_dump($data);
-                    die();
                     redirect("admin/auth");
                 }
             } else {
