@@ -19,5 +19,5 @@ class Beranda extends CI_Controller
         $data['content'] = $this->load->view('admin/berandaview', $datacontent, TRUE);
         $data['title'] = 'Admin Page Trans Bantul';
         $this->load->view('admin/tes/primary', $data);
-    }
+    } 
 }

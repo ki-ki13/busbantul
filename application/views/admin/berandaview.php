@@ -72,7 +72,7 @@
                         </button>
                     </a>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
     <div class="col-xl-6 col-md-6 mt-5">

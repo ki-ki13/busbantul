@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://rute-bus-admin.herokuapp.com';
-//$config['base_url'] = 'http://localhost/busbantul';
+// $config['base_url'] = 'http://localhost/busbantul';
 
 /*
 |--------------------------------------------------------------------------
