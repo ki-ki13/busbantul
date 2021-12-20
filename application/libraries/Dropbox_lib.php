@@ -14,7 +14,7 @@ class DropBox_lib{
         require './vendor/autoload.php';
 
         //Configure Dropbox Application
-        $app = new DropboxApp("xh0dpdrsrs8cpox", "vcwlcd9ejra58o9", "sl.Azm6XJ3idivUoxJreIgWQ65RWsVoTvXMq3fWdhM68rlzfYN8RcJzkQhESusxiBT7BJXj719HpQUcXNeWq86hX8l6ZcVhoJh3mcndwxGuLpUGAW_rDX09xZfNTiRVlRDY2FUFE2E");
+        $app = new DropboxApp("kunci", "kunci", "kunci");
 
         //Configure Dropbox service
         $this->drop_object = new Dropbox($app);
